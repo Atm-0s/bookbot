@@ -23,18 +23,6 @@ char_counts = get_character_count(book_path)
 sorted_chars = sort_dict(char_counts)
 
 
-def report(book_path):
-    print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {book_path}...")
-    print("----------- Word Count ----------")
-    print(f"Found {word_count} total words")
-    print("--------- Character Count -------")
-    for i in sorted_chars:
-        n = sorted_chars[i]
-        print(f"{i}: {n}")
-    print("============= END ===============")
-
-
 def main():
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_path}...")
