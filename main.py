@@ -7,7 +7,37 @@ from stats import get_word_count
 
 from stats import get_character_count
 
+from stats import sort_dict
+
+
+book_path = "./books/frankenstein.txt"
+book_text = get_book_text(book_path)
+word_count = get_word_count(book_path)
+char_counts = get_character_count(book_path)
+sorted_chars = sort_dict(char_counts)
+
+
+def report(book_path):
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    for i in sorted_chars:
+        n = sorted_chars[i]
+        print(f"{i}: {n}")
+    print("============= END ===============")
+
+
 def main():
-    print(get_character_count('./books/frankenstein.txt'))
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {book_path}...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    for i in sorted_chars:
+       print(f"{i["char"]}: {i["num"]}")
+    print("============= END ===============")
+    
 
 main()

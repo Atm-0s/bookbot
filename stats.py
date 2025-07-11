@@ -4,11 +4,11 @@ def get_word_count(book_text):
         words_list = book_contents.split()
         return len(words_list)
     
-def get_character_count(book_text):
+def get_character_count(book_path):
     
     letter_dict = {}
                
-    with open(book_text) as book:
+    with open(book_path) as book:
         book_contents = book.read()
         lowered_case = book_contents.lower()
         
@@ -20,7 +20,23 @@ def get_character_count(book_text):
             
     return letter_dict
 
-print(get_character_count('./books/frankenstein.txt'))
+def sort_dict(character_dictionary):
+    dict_list = []
+    for character in character_dictionary:
+        num = character_dictionary[character]
+        if character.isalpha() == True:
+            dict_list.append({"char": character, "num": num})
     
+    dict_list.sort(reverse=True, key=lambda item: item["num"])
+
+
+
+    return dict_list
+
+
+
+
+    
+   
 
 
